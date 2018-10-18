@@ -1,34 +1,47 @@
 package com.overops.webhook.example.web;
 
 import com.overops.webhook.example.data.Event;
-import com.overops.webhook.example.integrations.MattermostService;
-import com.overops.webhook.example.integrations.PivotalService;
+import com.overops.webhook.example.integrations.RtcjazzService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 @RestController
 public class WebhookRestController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-
-
-    private PivotalService pivotalService;
-
-    private MattermostService mattermostService;
+    private RtcjazzService rtcjazzService;
+    private RequestMappingHandlerMapping handlerMapping;
 
     @Autowired
-    public WebhookRestController(PivotalService pivotalService, MattermostService mattermostService) {
-        this.pivotalService = pivotalService;
-        this.mattermostService = mattermostService;
+    public WebhookRestController(
+    		RtcjazzService rtcjazzService,
+    		RequestMappingHandlerMapping handlerMapping) {
+        this.rtcjazzService = rtcjazzService;
+        this.handlerMapping = handlerMapping;
     }
 
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public ResponseEntity<String> show(Model model) {
+     model.addAttribute("handlerMethods", this.handlerMapping.getHandlerMethods());
+     return new ResponseEntity<String>(model.toString(), HttpStatus.OK);
+    } 
+    
+    
+    
+    
+    
     @PostMapping(value = "/wh/simple", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity simple(@RequestBody Event event) {
 
@@ -43,35 +56,20 @@ public class WebhookRestController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @PostMapping(value = "/wh/pivotal-tracker", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity pivotalTracker(@RequestBody Event event) {
+
+
+
+   
+    @PostMapping(value = "/wh/rtcjazz", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity rtcjazzTracker(@RequestBody Event event) {
 
         if (Event.Type.ALERT.equals(event.getType())) {
 
-            log.debug("OverOps event posted to /wh/pivotal-tracker via WebHook integration: {}", event.toString());
+            log.debug("OverOps event posted to /wh/rtcjazz via WebHook integration: {}", event.toString());
 
-            ResponseEntity<String> response = pivotalService.createEntity(event);
+            ResponseEntity<String> response = rtcjazzService.createEntity(event);
 
-            log.debug("/wh/pivotal-tracker response: {}", response.toString());
-
-            return response;
-
-        }
-
-        return ResponseEntity.ok(HttpStatus.OK);
-    }
-
-
-    @PostMapping(value = "/wh/mattermost", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity mattermost(@RequestBody Event event) {
-
-        if (Event.Type.ALERT.equals(event.getType())) {
-
-            log.debug("OverOps event posted to /wh/mattermost via WebHook integration: {}", event.toString());
-
-            ResponseEntity<String> response = mattermostService.createEntity(event);
-
-            log.debug("/wh/mattermost response: {}", response.toString());
+            log.debug("/wh/rtcjazz response: {}", response.toString());
 
             return response;
 

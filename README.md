@@ -47,6 +47,20 @@ public void myCustomWebhookHandler(@RequestBody Event event) {
     // add your custom logic here to do something with the Event...
 } 
 ```
+## rtc Jazz
+
+Rational Team Concert Jazz CCM create defect webhook.
+
+```properties
+webhook.rtcjazz.api.url=https://jazz.net/xxxxx-ccm
+webhook.rtcjazz.api.username=
+webhook.rtcjazz.api.password=
+webhook.rtcjazz.api.projectarea=<Project Area full name>
+webhook.rtcjazz.api.category=<Full category path>
+```
+
+This example also uses Thymeleaf templates to create Tracker compliant markdown for text fields.  This allows richer formatting for data.
+
 
 ## Pivotal Tracker
 

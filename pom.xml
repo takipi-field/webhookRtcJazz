@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.overops.webhook</groupId>
-	<artifactId>webhook-example</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<artifactId>webhook-rtcjazz</artifactId>
+	<version>0.2</version>
 	<packaging>jar</packaging>
 
 	<name>OverOps WebHook Examples</name>
@@ -15,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -43,6 +44,427 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-joda</artifactId>
 			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId> apache-mime4j-0.6.jar </groupId>
+			<artifactId>apache-mime4j-0.6.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.icu_4.2.1.v20100412.jar </groupId>
+			<artifactId>com.ibm.icu_4.2.1.v20100412.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.rational.wvcm.ct_3.0.1000.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.rational.wvcm.ct_3.0.1000.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.rational.wvcm.factory_3.0.200.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.rational.wvcm.factory_3.0.200.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.rational.wvcm.interop_3.1.800.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.rational.wvcm.interop_3.1.800.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.rational.wvcm.ri.repo_3.0.700.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.rational.wvcm.ri.repo_3.0.700.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.build.client_3.0.1300.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.team.build.client_3.0.1300.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.build.common_3.1.1300.v20160301_1740.jar </groupId>
+			<artifactId>com.ibm.team.build.common_3.1.1300.v20160301_1740.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.calm.foundation.common_3.1.1200.v20160205_0047.jar </groupId>
+			<artifactId>com.ibm.team.calm.foundation.common_3.1.1200.v20160205_0047.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.connector.scm.client_3.0.1100.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.team.connector.scm.client_3.0.1100.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.connector.scm.common_3.1.200.v20151207_2229.jar </groupId>
+			<artifactId>com.ibm.team.connector.scm.common_3.1.200.v20151207_2229.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.connector.scm.operations_3.1.500.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.team.connector.scm.operations_3.1.500.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.datawarehouse.common_2.2.1000.v20150218_1646.jar </groupId>
+			<artifactId>com.ibm.team.datawarehouse.common_2.2.1000.v20150218_1646.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.dev.jdojo.runtime.common_3.0.800.v20151207_2229.jar </groupId>
+			<artifactId>com.ibm.team.dev.jdojo.runtime.common_3.0.800.v20151207_2229.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.enterprise.buildablesubset.client_3.1.700.v20160212_0131.jar </groupId>
+			<artifactId>com.ibm.team.enterprise.buildablesubset.client_3.1.700.v20160212_0131.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.enterprise.buildablesubset.common_3.1.900.v20160211_0055.jar </groupId>
+			<artifactId>com.ibm.team.enterprise.buildablesubset.common_3.1.900.v20160211_0055.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.enterprise.scd.client_1.0.100.v20151219_0057.jar </groupId>
+			<artifactId>com.ibm.team.enterprise.scd.client_1.0.100.v20151219_0057.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.enterprise.scd.common_1.0.100.v20160108_1736.jar </groupId>
+			<artifactId>com.ibm.team.enterprise.scd.common_1.0.100.v20160108_1736.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.filesystem.client.1.7.jar </groupId>
+			<artifactId>com.ibm.team.filesystem.client.1.7.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.filesystem.client.daemon_3.1.700.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.team.filesystem.client.daemon_3.1.700.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.filesystem.client.workitems_3.1.1000.v20151219_0057.jar </groupId>
+			<artifactId>com.ibm.team.filesystem.client.workitems_3.1.1000.v20151219_0057.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.filesystem.client_3.2.700.v20160310_1729.jar </groupId>
+			<artifactId>com.ibm.team.filesystem.client_3.2.700.v20160310_1729.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.filesystem.common.workitems_3.1.900.v20160301_1740.jar </groupId>
+			<artifactId>com.ibm.team.filesystem.common.workitems_3.1.900.v20160301_1740.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.filesystem.common_3.2.700.v20160225_1717.jar </groupId>
+			<artifactId>com.ibm.team.filesystem.common_3.2.700.v20160225_1717.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.foundation.client_1.1.1100.v20120901_0511.jar </groupId>
+			<artifactId>com.ibm.team.foundation.client_1.1.1100.v20120901_0511.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.foundation.common_1.3.2000.v20151009_1716.jar </groupId>
+			<artifactId>com.ibm.team.foundation.common_1.3.2000.v20151009_1716.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.foundation.rcp.core_1.1.3000.v20150814_0104.jar </groupId>
+			<artifactId>com.ibm.team.foundation.rcp.core_1.1.3000.v20150814_0104.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.fulltext.common_1.2.2000.v20160308_1839.jar </groupId>
+			<artifactId>com.ibm.team.fulltext.common_1.2.2000.v20160308_1839.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.interop.client.rest_3.0.600.v20160120_1740.jar </groupId>
+			<artifactId>com.ibm.team.interop.client.rest_3.0.600.v20160120_1740.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.interop.client_3.0.700.v20151207_2315.jar </groupId>
+			<artifactId>com.ibm.team.interop.client_3.0.700.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.interop.common_3.0.900.v20151207_2229.jar </groupId>
+			<artifactId>com.ibm.team.interop.common_3.0.900.v20151207_2229.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.process.client_1.3.2000.v20150716_0248.jar </groupId>
+			<artifactId>com.ibm.team.process.client_1.3.2000.v20150716_0248.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.process.common_1.3.3000.v20160308_1839.jar </groupId>
+			<artifactId>com.ibm.team.process.common_1.3.3000.v20160308_1839.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.reports.client_2.1.1200.v20130129_0138.jar </groupId>
+			<artifactId>com.ibm.team.reports.client_2.1.1200.v20130129_0138.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.reports.common_2.4.1000.v20150326_0016.jar </groupId>
+			<artifactId>com.ibm.team.reports.common_2.4.1000.v20150326_0016.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.client_1.3.3000.v20160308_1839.jar </groupId>
+			<artifactId>com.ibm.team.repository.client_1.3.3000.v20160308_1839.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.common.json_1.2.1000.v20150610_0124.jar </groupId>
+			<artifactId>com.ibm.team.repository.common.json_1.2.1000.v20150610_0124.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.common.remoteaccess.auth_1.3.1000.v20141126_0052.jar </groupId>
+			<artifactId>com.ibm.team.repository.common.remoteaccess.auth_1.3.1000.v20141126_0052.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.common.remoteaccess_1.2.3000.v20160308_1839.jar </groupId>
+			<artifactId>com.ibm.team.repository.common.remoteaccess_1.2.3000.v20160308_1839.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.common.serialize_1.2.3000.v20160308_1839.jar </groupId>
+			<artifactId>com.ibm.team.repository.common.serialize_1.2.3000.v20160308_1839.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.common.transport_1.2.0.v20140307_1622.jar </groupId>
+			<artifactId>com.ibm.team.repository.common.transport_1.2.0.v20140307_1622.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.common_1.4.3000.v20160308_1839.jar </groupId>
+			<artifactId>com.ibm.team.repository.common_1.4.3000.v20160308_1839.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.repository.rcp.common_3.1.600.v20151207_2229.jar </groupId>
+			<artifactId>com.ibm.team.repository.rcp.common_3.1.600.v20151207_2229.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.rtc.common_3.1.1400.v20160226_0115.jar </groupId>
+			<artifactId>com.ibm.team.rtc.common_3.1.1400.v20160226_0115.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.rtc.foundation.api.common_3.1.700.v20160212_1735.jar </groupId>
+			<artifactId>com.ibm.team.rtc.foundation.api.common_3.1.700.v20160212_1735.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.scm.admin.common_3.2.100.v20151207_2229.jar </groupId>
+			<artifactId>com.ibm.team.scm.admin.common_3.2.100.v20151207_2229.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.scm.client_3.2.700.v20160307_1710.jar </groupId>
+			<artifactId>com.ibm.team.scm.client_3.2.700.v20160307_1710.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.scm.common_3.2.700.v20160316_1838.jar </groupId>
+			<artifactId>com.ibm.team.scm.common_3.2.700.v20160316_1838.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.workitem.api.common_3.1.1000.v20151219_0043.jar </groupId>
+			<artifactId>com.ibm.team.workitem.api.common_3.1.1000.v20151219_0043.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.workitem.client_3.1.1400.v20160114_0102.jar </groupId>
+			<artifactId>com.ibm.team.workitem.client_3.1.1400.v20160114_0102.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> com.ibm.team.workitem.common_3.2.600.v20160225_1717.jar </groupId>
+			<artifactId>com.ibm.team.workitem.common_3.2.600.v20160225_1717.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> commons-io-1.2.jar </groupId>
+			<artifactId>commons-io-1.2.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpclient-4.5.jar </groupId>
+			<artifactId>httpclient-4.5.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpclient-cache-4.5.jar </groupId>
+			<artifactId>httpclient-cache-4.5.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpclient-win-4.5.jar </groupId>
+			<artifactId>httpclient-win-4.5.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpcore-4.4.1.jar </groupId>
+			<artifactId>httpcore-4.4.1.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpcore-ab-4.4.1.jar </groupId>
+			<artifactId>httpcore-ab-4.4.1.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpcore-nio-4.4.1.jar </groupId>
+			<artifactId>httpcore-nio-4.4.1.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> httpmime-4.5.jar </groupId>
+			<artifactId>httpmime-4.5.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> javax.servlet_2.5.0.v200910301333.jar </groupId>
+			<artifactId>javax.servlet_2.5.0.v200910301333.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> javax.wvcm_1.6.200.v20151207_2315.jar </groupId>
+			<artifactId>javax.wvcm_1.6.200.v20151207_2315.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> net.oauth_0.2.3000.v20160321_1859.jar </groupId>
+			<artifactId>net.oauth_0.2.3000.v20160321_1859.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.apache.commons.httpclient_3.1.0.v201005080502.jar </groupId>
+			<artifactId>org.apache.commons.httpclient_3.1.0.v201005080502.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.apache.commons.logging_1.0.4.v201005080501.jar </groupId>
+			<artifactId>org.apache.commons.logging_1.0.4.v201005080501.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.apache.log4j_1.2.15.v201012070815.jar </groupId>
+			<artifactId>org.apache.log4j_1.2.15.v201012070815.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.core.filesystem_1.3.1.R36x_v20100727-0745.jar </groupId>
+			<artifactId>org.eclipse.core.filesystem_1.3.1.R36x_v20100727-0745.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.core.jobs_3.5.2.R36x_v20110419.jar </groupId>
+			<artifactId>org.eclipse.core.jobs_3.5.2.R36x_v20110419.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.core.resources_3.6.2.R36x_v20110628-1020.jar </groupId>
+			<artifactId>org.eclipse.core.resources_3.6.2.R36x_v20110628-1020.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.core.resources_3.6.2.R36x_v20120712-1700.jar </groupId>
+			<artifactId>org.eclipse.core.resources_3.6.2.R36x_v20120712-1700.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.core.runtime_3.6.0.v20100505.jar </groupId>
+			<artifactId>org.eclipse.core.runtime_3.6.0.v20100505.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.emf.common_2.6.0.v20100914-1218.jar </groupId>
+			<artifactId>org.eclipse.emf.common_2.6.0.v20100914-1218.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.emf.ecore.change_2.5.1.v20100907-1643.jar </groupId>
+			<artifactId>org.eclipse.emf.ecore.change_2.5.1.v20100907-1643.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.emf.ecore.xmi_2.5.0.v20100521-1846.jar </groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi_2.5.0.v20100521-1846.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.emf.ecore_2.6.1.v20100914-1218.jar </groupId>
+			<artifactId>org.eclipse.emf.ecore_2.6.1.v20100914-1218.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.equinox.common_3.6.0.v20100503.jar </groupId>
+			<artifactId>org.eclipse.equinox.common_3.6.0.v20100503.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.equinox.preferences_3.3.1.R36x_v20110302.jar </groupId>
+			<artifactId>org.eclipse.equinox.preferences_3.3.1.R36x_v20110302.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.equinox.registry_3.5.0.v20100503.jar </groupId>
+			<artifactId>org.eclipse.equinox.registry_3.5.0.v20100503.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.jface.text_3.6.1.r361_v20100825-0800.jar </groupId>
+			<artifactId>org.eclipse.jface.text_3.6.1.r361_v20100825-0800.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.jface.text_3.6.2.r362_v20121025.jar </groupId>
+			<artifactId>org.eclipse.jface.text_3.6.2.r362_v20121025.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.osgi_3.6.50.R36x_v20111004-1525.jar </groupId>
+			<artifactId>org.eclipse.osgi_3.6.50.R36x_v20111004-1525.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.osgi_3.6.50.R36x_v20120315-1500.jar </groupId>
+			<artifactId>org.eclipse.osgi_3.6.50.R36x_v20120315-1500.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.text_3.5.0.v20100601-1300.jar </groupId>
+			<artifactId>org.eclipse.text_3.5.0.v20100601-1300.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId> org.eclipse.xsd_2.6.0.v20100914-1218.jar </groupId>
+			<artifactId>org.eclipse.xsd_2.6.0.v20100914-1218.jar</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
 		</dependency>
 
 	</dependencies>
