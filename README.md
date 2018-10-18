@@ -14,8 +14,10 @@ To get started simply run the following command or use your IDE of choice.
 ``` 
 
 ## Getting Started stand-alone Jar file
+download bin/webhook-rtcjazz-x.x.jar  and bin/application.properties.  Place in same directory.
+update application.properties 
 
-java -jar java -jar webhook-rtcjazz-x.x.jar
+java -jar webhook-rtcjazz-x.x.jar
 
 
 By default, this will start up the provided examples running inside an embedded tomcat instance listening on port `8080`.  This can be easily changed by modifying `application.properties`, etc.
